@@ -6,7 +6,7 @@ public class Main {
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
-        exo5();
+        exo6();
     }
 
     public static void exo1() {
@@ -123,6 +123,56 @@ public class Main {
             }
 
         }
+
+    }
+
+    public static void exo6() {
+        System.out.println("Entrer un nombre entier");
+        int entier1 = scan.nextInt();
+
+        System.out.println("Entrer un 2e nombre entier");
+        int entier2 = scan.nextInt();
+
+        System.out.println("Entrer un 3e nombre entier");
+        int entier3 = scan.nextInt();
+
+        System.out.println("Entrer un 4e nombre entier");
+        int entier4 = scan.nextInt();
+
+        System.out.println("Entrer un 5e nombre entier");
+        int entier5 = scan.nextInt();
+
+        System.out.println("Entrer un 6e nombre entier");
+        int entier6 = scan.nextInt();
+
+        int[] tableauBase = {entier1, entier2, entier3, entier4, entier5, entier6};
+
+        String tableauBaseString = "";
+        for (int i = 0; i < tableauBase.length; i++) {
+            tableauBaseString += tableauBase[i] + ", ";
+        }
+        System.out.println("Le tableau obtenu est : " + tableauBaseString);
+
+        // Tri du tableau
+        int entierTemp;
+
+        for (int j = 0; j < tableauBase.length; j++) {
+            for (int k=tableauBase.length - 1; k > j; k--) {
+                if (tableauBase[k] < tableauBase[k - 1]) {
+                    entierTemp = tableauBase[k];
+                    tableauBase[k] = tableauBase[k - 1];
+                    tableauBase[k - 1] = entierTemp;
+
+                }
+            }
+        }
+
+        String tableauTrieString = "";
+        for (int i= 0; i<tableauBase.length; i++) {
+            tableauTrieString += tableauBase[i] + ", ";
+        }
+
+        System.out.println("Le tableau trié est :" + tableauTrieString);
 
     }
 
