@@ -146,6 +146,7 @@ public class Main {
         int entier6 = scan.nextInt();
 
         int[] tableauBase = {entier1, entier2, entier3, entier4, entier5, entier6};
+//        int[] tableauBase = {5, 7, 9, 4, 6, 8};
 
         String tableauBaseString = "";
         for (int i = 0; i < tableauBase.length; i++) {
@@ -154,18 +155,37 @@ public class Main {
         System.out.println("Le tableau obtenu est : " + tableauBaseString);
 
         // Tri du tableau
-        int entierTemp;
+//        int entierTemp;
 
-        for (int j = 0; j < tableauBase.length; j++) {
-            for (int k=tableauBase.length - 1; k > j; k--) {
-                if (tableauBase[k] < tableauBase[k - 1]) {
-                    entierTemp = tableauBase[k];
-                    tableauBase[k] = tableauBase[k - 1];
-                    tableauBase[k - 1] = entierTemp;
+//        for (int i = 0; i < tableauBase.length; i++) {
+//            for (int j=tableauBase.length - 1; j > i; j--) {
+//                if (tableauBase[j] < tableauBase[j - 1]) {
+//                    entierTemp = tableauBase[j];
+//                    tableauBase[j] = tableauBase[j - 1];
+//                    tableauBase[j - 1] = entierTemp;
+//
+//                }
+//            }
+//        }
 
+
+        // Tri du tableau v2
+        int entierTemporaire;
+        boolean echangeActif = true;
+
+        while (echangeActif)  {
+            echangeActif = false;
+
+            for (int i=0; i<tableauBase.length - 1; i++){
+                if (tableauBase[i] > tableauBase[i+1]){
+                    entierTemporaire = tableauBase[i];
+                    tableauBase[i] = tableauBase[i+1];
+                    tableauBase[i+1] = entierTemporaire;
+                    echangeActif = true;
                 }
             }
         }
+
 
         String tableauTrieString = "";
         for (int i= 0; i<tableauBase.length; i++) {
